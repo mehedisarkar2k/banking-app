@@ -35,7 +35,10 @@ function bankingPage() {
 
   // Deposit money
   depositBTN.addEventListener("click", () => {
-    if (!isNaN(parseFloat(depositInput.value))) {
+    if (
+      !isNaN(parseFloat(depositInput.value)) &&
+      parseFloat(depositInput.value) > 0
+    ) {
       updateFinalBalance(depositInput, balanceTotal, "deposit");
     } else {
       addMessage("Wrong input can't be added", "red");
@@ -46,7 +49,10 @@ function bankingPage() {
 
   // Withdraw money
   withdrawBTN.addEventListener("click", () => {
-    if (!isNaN(parseFloat(withdrawInput.value))) {
+    if (
+      !isNaN(parseFloat(withdrawInput.value)) &&
+      parseFloat(withdrawInput.value) > 0
+    ) {
       updateFinalBalance(withdrawInput, balanceTotal, "withdraw");
     } else {
       addMessage("Wrong input can't be added", "red");
