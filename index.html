@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bank</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="text-center py-8 bg-black md:mb-12">
+      <h1 class="font-bold text-gray-200 text-2xl tracking-wide">
+        Awesome Banking Dashboard
+      </h1>
+      <button
+        id="logout-btn"
+        class="
+          text-2xl text-white
+          border-4 border-green-600
+          py-1
+          px-2
+          rounded-xl
+          mt-4
+          hidden
+        "
+      >
+        Logout
+      </button>
+    </header>
+
+    <main class="w-full md:w-3/4 mx-auto">
+      <div id="loggedInPage" class="text-center">
+        <div class="container flex justify-center items-center flex-col">
+          <input
+            type="text"
+            id="user-email"
+            placeholder="Your E-mail (abc@abc.com)"
+            class="
+              block
+              outline-none
+              border-2 border-gray-400
+              w-1/2
+              md:w-1/3
+              mb-4
+              py-1
+              px-2
+              rounded
+              focus:border-indigo-500
+            "
+          />
+          <input
+            type="password"
+            id="user-password"
+            placeholder="Your Password (12345)"
+            class="
+              block
+              outline-none
+              border-2 border-gray-400
+              w-1/2
+              md:w-1/3
+              mb-4
+              py-1
+              px-2
+              rounded
+              focus:border-indigo-500
+            "
+          />
+          <button
+            id="btn-login"
+            class="
+              bg-indigo-600
+              text-white text-2xl
+              py-2
+              px-8
+              rounded-2xl
+              hover:bg-indigo-500
+            "
+          >
+            Log in
+          </button>
+        </div>
+      </div>
+
+      <div id="dashboard">
+        <div class="display-section mb-4">
+          <div class="grid md:grid-cols-3 md:gap-4">
+            <div
+              class="
+                bg-green-400
+                text-white text-center
+                p-2
+                md:p-6 md:rounded-2xl
+              "
+            >
+              <p class="font-medium text-2xl mb-1">Deposit</p>
+              <div class="font-bold text-3xl">
+                $<span id="deposit-total">00</span>
+              </div>
+            </div>
+
+            <div
+              class="
+                bg-red-400
+                text-white text-center
+                p-2
+                md:p-6 md:rounded-2xl
+              "
+            >
+              <p class="font-medium text-2xl mb-1">Withdraw</p>
+              <div class="font-bold text-3xl">
+                $<span id="withdraw-total">00</span>
+              </div>
+            </div>
+
+            <div
+              class="
+                bg-yellow-400
+                text-white text-center
+                p-2
+                md:p-6 md:rounded-2xl
+              "
+            >
+              <p class="font-medium text-2xl mb-1">Balance</p>
+              <div class="font-bold text-3xl">
+                $<span id="balance-total">850</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center h-10 flex items-center justify-center">
+          <span
+            class="
+              text-green-500
+              font-bold
+              border-2 border-green-400
+              p-2
+              rounded-xl
+              hidden
+            "
+            >Hey! <span id="message"></span>
+          </span>
+        </div>
+
+        <div class="input-section mt-4">
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div
+              class="
+                deposit
+                bg-green-200
+                text-white text-center
+                py-4
+                md:py-8
+                px-4
+                md:rounded-2xl
+              "
+            >
+              <input
+                type="text"
+                id="deposit-input"
+                placeholder="Amount($) only"
+                class="
+                  block
+                  mx-auto
+                  py-2
+                  px-4
+                  text-gray-700
+                  outline-none
+                  rounded
+                  mb-4
+                  w-full
+                "
+              />
+              <button
+                id="btn-deposit"
+                class="
+                  block
+                  mx-auto
+                  bg-green-400
+                  py-2
+                  px-4
+                  rounded-xl
+                  font-medium
+                  text-2xl
+                "
+              >
+                Deposit
+              </button>
+            </div>
+
+            <div
+              class="
+                withdraw
+                bg-red-200
+                text-white text-center
+                py-4
+                md:py-8
+                px-4
+                md:rounded-2xl
+              "
+            >
+              <input
+                type="text"
+                id="withdraw-input"
+                placeholder="Amount($) only"
+                class="
+                  block
+                  mx-auto
+                  py-2
+                  px-4
+                  text-gray-700
+                  outline-none
+                  rounded
+                  mb-4
+                  w-full
+                "
+              />
+              <button
+                id="btn-withdraw"
+                class="
+                  block
+                  mx-auto
+                  bg-red-400
+                  py-2
+                  px-4
+                  rounded-xl
+                  font-medium
+                  text-2xl
+                "
+              >
+                Withdraw
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- script -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
